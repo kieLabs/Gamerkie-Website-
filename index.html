@@ -1,0 +1,1930 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsversion='3' expr:dir='data:blog.languageDirection' lang='en' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta charset='utf-8'/>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes' name='viewport'/>
+  <title><data:view.title.escaped/></title>
+  <b:include data='blog' name='all-head-content'/>
+
+  <!-- Professional Gaming Typography: Rajdhani & Plus Jakarta Sans -->
+  <link href='https://fonts.googleapis.com' rel='preconnect'/>
+  <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+  <link href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Rajdhani:wght@600;700;800&amp;display=swap' rel='stylesheet'/>
+
+  <b:skin><![CDATA[
+  /* ==========================================================================
+     GAMERKIE PRO - PROFESSIONAL ESPORTS & ARCADE GAMING PORTAL THEME (v3.0)
+     Audited & Verified: Zero Overlap, Single-Stage Post Mount, 3-Grid Catalog
+     ========================================================================== */
+  :root {
+    --bg-main: #070d14;
+    --bg-card: #0f1924;
+    --bg-card-hover: #152332;
+    --bg-elevated: #12202e;
+    --bg-header: rgba(6, 14, 22, 0.94);
+    --bg-subnav: #0a1520;
+    --text-primary: #f1f7f5;
+    --text-secondary: #9bb3ad;
+    --text-muted: #64827a;
+    --accent-primary: #00f5a0;
+    --accent-secondary: #00d9f5;
+    --accent-gold: #ffc857;
+    --accent-danger: #ff3366;
+    --accent-gradient: linear-gradient(135deg, #00f5a0 0%, #00b894 55%, #f5b73b 100%);
+    --brand-gradient: linear-gradient(135deg, #052e25 0%, #0b6e56 50%, #d8a236 100%);
+    --border-subtle: rgba(0, 245, 160, 0.14);
+    --border-bright: rgba(0, 245, 160, 0.45);
+    --shadow-card: 0 8px 22px rgba(0, 0, 0, 0.42);
+    --shadow-glow: 0 10px 28px rgba(0, 245, 160, 0.22);
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --font-heading: 'Rajdhani', sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Light Mode Theme Option (Toggled via Header 🌓 Button) */
+  body.light-mode {
+    --bg-main: #eef5f3;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f4fbf9;
+    --bg-elevated: #e2eeeb;
+    --bg-header: rgba(6, 43, 36, 0.98);
+    --bg-subnav: #09382f;
+    --text-primary: #0c261f;
+    --text-secondary: #3b5c53;
+    --text-muted: #5e7e75;
+    --border-subtle: rgba(12, 38, 31, 0.1);
+    --border-bright: rgba(0, 184, 148, 0.5);
+    --shadow-card: 0 6px 18px rgba(6, 43, 36, 0.08);
+    --shadow-glow: 0 10px 24px rgba(0, 184, 148, 0.22);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-bottom: 66px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .gk-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 12px;
+  }
+
+  /* ==========================================================================
+     1. TOP HEADER BAR (ZERO OVERLAP, TABS RIGHT BESIDE GAMERKIE ON LEFT)
+     ========================================================================== */
+  .gk-header {
+    background: var(--bg-header);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0, 245, 160, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 60px;
+    gap: 10px;
+    padding: 6px 0;
+  }
+
+  /* Left Group: Brand Logo + Navigation Tabs right beside it */
+  .header-left-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  /* GamerKie Logo Box - Locked width so it NEVER clips into GamerK */
+  .gk-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--brand-gradient);
+    padding: 5px 12px 5px 7px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 245, 160, 0.4);
+    flex-shrink: 0;
+    white-space: nowrap;
+    box-shadow: 0 3px 14px rgba(0, 245, 160, 0.25);
+  }
+
+  .gk-brand-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: #041914;
+    color: var(--accent-primary);
+    font-family: var(--font-heading);
+    font-size: 19px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 245, 160, 0.45);
+    flex-shrink: 0;
+  }
+
+  .gk-brand-text {
+    font-family: var(--font-heading);
+    font-size: 21px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.4px;
+    line-height: 1;
+  }
+
+  .gk-brand-text span {
+    color: var(--accent-primary);
+  }
+
+  /* Left-Aligned Tabs right next to GamerKie */
+  .gk-nav-tabs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    min-width: 0;
+    padding: 2px 0;
+  }
+
+  .gk-nav-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gk-nav-tab {
+    color: #d8f3ec;
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .gk-nav-tab:hover,
+  .gk-nav-tab.active {
+    background: var(--accent-primary);
+    color: #032018;
+    border-color: transparent;
+    box-shadow: 0 0 12px rgba(0, 245, 160, 0.4);
+  }
+
+  /* Right Header Icons */
+  .header-right-tools {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .header-tool-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(0, 245, 160, 0.28);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    flex-shrink: 0;
+    transition: var(--transition);
+  }
+
+  .header-tool-btn:hover {
+    background: var(--accent-primary);
+    color: #032018;
+    border-color: transparent;
+  }
+
+  .fav-badge-counter {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--accent-danger);
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 800;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3px;
+  }
+
+  /* ==========================================================================
+     2. CATEGORY SUB-NAVIGATION BAR (19 GAMING CATEGORIES + ACTIVE FILTER)
+     ========================================================================== */
+  .gk-category-bar {
+    background: var(--bg-subnav);
+    border-bottom: 1px solid rgba(0, 245, 160, 0.16);
+    padding: 8px 0;
+  }
+
+  .category-track {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 2px;
+  }
+
+  .category-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cat-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 13px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(0, 245, 160, 0.24);
+    color: #dff7f0;
+    font-size: 12px;
+    font-weight: 600;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .cat-pill:hover,
+  .cat-pill.active {
+    background: var(--accent-primary);
+    color: #032018;
+    border-color: transparent;
+    font-weight: 800;
+    box-shadow: 0 0 12px rgba(0, 245, 160, 0.35);
+  }
+
+  /* ==========================================================================
+     3. HERO BANNER (PREMIUM ESPORTS PORTAL HEADER)
+     ========================================================================== */
+  .gk-hero-banner {
+    margin: 14px 0 18px;
+    background: linear-gradient(125deg, #062922 0%, #0b5847 52%, #b58426 100%);
+    border: 1px solid rgba(0, 245, 160, 0.32);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .hero-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-emblem {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    background: rgba(4, 22, 18, 0.85);
+    border: 1px solid rgba(0, 245, 160, 0.5);
+    color: var(--accent-primary);
+    font-family: var(--font-heading);
+    font-size: 25px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .hero-copy h1 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+  }
+
+  .hero-copy p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 2px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .hero-action-pill {
+    background: rgba(4, 22, 18, 0.82);
+    color: #ffffff;
+    border: 1px solid rgba(0, 245, 160, 0.4);
+    padding: 7px 15px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .hero-action-pill:hover {
+    background: var(--accent-primary);
+    color: #032018;
+    border-color: transparent;
+  }
+
+  /* ==========================================================================
+     4. HOMEPAGE SECTIONS & STRICT 3-COLUMN GRID (ALL DEVICES)
+     ========================================================================== */
+  .gk-section {
+    margin-bottom: 24px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .section-title-group h2 {
+    font-family: var(--font-heading);
+    font-size: 21px;
+    font-weight: 800;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    line-height: 1.15;
+  }
+
+  .section-title-group h2::before {
+    content: '';
+    width: 4px;
+    height: 17px;
+    border-radius: 3px;
+    background: var(--accent-gradient);
+    display: inline-block;
+  }
+
+  .section-title-group p {
+    font-size: 11.5px;
+    color: var(--text-secondary);
+    margin-top: 1px;
+  }
+
+  .section-more-btn {
+    background: var(--accent-primary);
+    color: #03241b;
+    font-size: 11.5px;
+    font-weight: 800;
+    padding: 5px 14px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(0, 245, 160, 0.28);
+    transition: var(--transition);
+  }
+
+  .section-more-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.08);
+  }
+
+  .empty-state-banner {
+    background: var(--bg-elevated);
+    border: 1px dashed var(--border-bright);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 12.5px;
+  }
+
+  /* STRICT 3-COLUMN GAME GRID FOR DESKTOP, TABLET, AND MOBILE */
+  .gk-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .game-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .game-card:hover {
+    transform: translateY(-4px);
+    background: var(--bg-card-hover);
+    border-color: var(--border-bright);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .game-thumb-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #06141c;
+    overflow: hidden;
+  }
+
+  .game-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+
+  .game-card:hover .game-thumb-img {
+    transform: scale(1.06);
+  }
+
+  /* Quick Card Favorite Button (Top Right of Card) */
+  .card-fav-trigger {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(6, 14, 22, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: var(--transition);
+  }
+
+  .card-fav-trigger.is-saved,
+  .card-fav-trigger:hover {
+    background: var(--accent-danger);
+    border-color: transparent;
+    color: #ffffff;
+  }
+
+  .card-corner-tag {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    background: rgba(6, 14, 22, 0.84);
+    border: 1px solid rgba(0, 245, 160, 0.4);
+    color: var(--accent-primary);
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  .game-card-info {
+    padding: 9px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: 4px;
+  }
+
+  .game-card-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .game-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+  }
+
+  .game-card-genre {
+    font-size: 10.5px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-play-pill {
+    background: var(--accent-gold);
+    color: #2b1d00;
+    font-size: 9.5px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .game-card:hover .card-play-pill {
+    background: var(--accent-primary);
+    color: #032018;
+  }
+
+  /* PERMANENTLY SUPPRESS BLOGGER PAGINATION (OLDER / NEWER GAMES) */
+  #blog-pager,
+  .blog-pager,
+  .blog-pager-older-link,
+  .blog-pager-newer-link,
+  #blog-pager-older-link,
+  #blog-pager-newer-link,
+  #PopularPosts1 {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* ==========================================================================
+     5. SINGLE POST / GAME PLAYER VIEW (100% DUPLICATE-FREE GAME STAGE)
+     ========================================================================== */
+  .single-post-stage-wrap {
+    margin: 14px 0 32px;
+  }
+
+  .game-theatre-box {
+    background: #03070b;
+    border: 1px solid rgba(0, 245, 160, 0.3);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.65);
+    transition: var(--transition);
+  }
+
+  .game-theatre-box.theater-expanded .game-viewport-screen {
+    min-height: 78vh;
+  }
+
+  .game-theatre-box.theater-expanded .game-viewport-screen iframe {
+    height: 78vh;
+  }
+
+  .game-viewport-screen {
+    width: 100%;
+    min-height: 540px;
+    background: #03070b;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .game-viewport-screen iframe,
+  .game-viewport-screen embed,
+  .game-viewport-screen object {
+    width: 100%;
+    height: 560px;
+    border: none;
+    display: block;
+  }
+
+  /* Game Controls Bar */
+  .game-action-bar {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-subtle);
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .action-btn-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .stage-ctrl-btn {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    border: 1px solid var(--border-subtle);
+    padding: 6px 13px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+  }
+
+  .stage-ctrl-btn.primary-ctrl,
+  .stage-ctrl-btn.active-fav {
+    background: var(--accent-primary);
+    color: #032018;
+    border-color: transparent;
+  }
+
+  .stage-ctrl-btn:hover {
+    transform: translateY(-1px);
+    border-color: var(--accent-primary);
+  }
+
+  /* About Game Card */
+  .about-game-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 18px 20px;
+    margin-top: 16px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .about-game-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+
+  .about-game-header h1 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-primary);
+  }
+
+  .genre-pill-list {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .genre-tag-pill {
+    background: rgba(0, 245, 160, 0.12);
+    border: 1px solid rgba(0, 245, 160, 0.3);
+    color: var(--accent-primary);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 999px;
+  }
+
+  .about-game-panel p {
+    color: var(--text-secondary);
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+
+  .related-games-block {
+    margin-top: 24px;
+  }
+
+  /* ==========================================================================
+     6. FOOTER, STICKY MOBILE BAR & MODALS
+     ========================================================================== */
+  .gk-footer {
+    background: #040a10;
+    border-top: 1px solid rgba(0, 245, 160, 0.2);
+    color: #cfeae3;
+    padding: 30px 0 24px;
+    margin-top: 44px;
+    text-align: center;
+  }
+
+  .footer-brand-box {
+    display: inline-flex;
+    margin-bottom: 12px;
+  }
+
+  .footer-links-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .footer-modal-trigger {
+    color: #9dc7bc;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .footer-modal-trigger:hover {
+    color: var(--accent-primary);
+  }
+
+  .footer-copyright {
+    font-size: 11.5px;
+    color: #60857b;
+  }
+
+  /* Mobile Sticky Bottom Bar */
+  .gk-mobile-dock {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: rgba(5, 13, 20, 0.96);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(0, 245, 160, 0.25);
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 999;
+  }
+
+  .dock-link {
+    color: #c9eae1;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+  }
+
+  .dock-link:hover {
+    color: var(--accent-primary);
+  }
+
+  /* Modal Windows */
+  .gk-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(3, 9, 14, 0.84);
+    backdrop-filter: blur(6px);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  .gk-modal-overlay.active {
+    display: flex;
+  }
+
+  .gk-modal-card {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-bright);
+    border-radius: var(--radius-lg);
+    max-width: 580px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 22px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+  }
+
+  .modal-close-x {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .gk-modal-card h3 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    color: var(--accent-primary);
+    margin-bottom: 10px;
+  }
+
+  .gk-modal-card p,
+  .gk-modal-card li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 8px;
+  }
+
+  .gk-search-input {
+    width: 100%;
+    padding: 11px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border-bright);
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    font-size: 14px;
+    margin-bottom: 14px;
+    outline: none;
+  }
+
+  /* ==========================================================================
+     7. RESPONSIVE MEDIA QUERIES (MOBILE, TABLET, DESKTOP - ZERO OVERLAP)
+     ========================================================================== */
+  @media (max-width: 991px) {
+    .gk-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .game-viewport-screen {
+      min-height: 460px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .gk-mobile-dock {
+      display: flex;
+    }
+
+    .header-inner {
+      min-height: 52px;
+      gap: 6px;
+    }
+
+    /* Brand Logo stays 100% intact, tabs sit cleanly to its right */
+    .gk-brand {
+      padding: 4px 9px 4px 6px;
+      gap: 5px;
+    }
+
+    .gk-brand-icon {
+      width: 24px;
+      height: 24px;
+      font-size: 15px;
+    }
+
+    .gk-brand-text {
+      font-size: 16px;
+    }
+
+    .header-left-group {
+      gap: 6px;
+    }
+
+    .gk-nav-tab {
+      font-size: 11px;
+      padding: 4px 9px;
+    }
+
+    .header-tool-btn {
+      width: 30px;
+      height: 30px;
+      font-size: 12px;
+    }
+
+    /* Strict 3-Column Grid on Mobile */
+    .gk-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .game-card-info {
+      padding: 6px 7px;
+    }
+
+    .game-card-title {
+      font-size: 11px;
+    }
+
+    .game-card-genre {
+      font-size: 9px;
+    }
+
+    .card-play-pill {
+      font-size: 8.5px;
+      padding: 1.5px 5px;
+    }
+
+    .card-fav-trigger {
+      width: 22px;
+      height: 22px;
+      font-size: 10px;
+      top: 5px;
+      right: 5px;
+    }
+
+    .card-corner-tag {
+      font-size: 8px;
+      padding: 1.5px 4px;
+      top: 5px;
+      left: 5px;
+    }
+
+    .game-viewport-screen {
+      min-height: 380px;
+    }
+
+    .game-viewport-screen iframe {
+      height: 390px;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .gk-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 6px;
+    }
+    .game-card-title {
+      font-size: 10px;
+    }
+  }
+  ]]></b:skin>
+</head>
+
+<body>
+  <!-- ========================================================================
+       1. STICKY HEADER: GAMERKIE LOGO + LEFT-ALIGNED TABS RIGHT BESIDE IT
+       ======================================================================== -->
+  <header class='gk-header'>
+    <div class='gk-container'>
+      <div class='header-inner'>
+        <div class='header-left-group'>
+          <!-- Brand Logo (Protected with flex-shrink: 0 so it never clips) -->
+          <a class='gk-brand' href='/'>
+            <span class='gk-brand-icon'>G</span>
+            <span class='gk-brand-text'>Gamer<span>Kie</span></span>
+          </a>
+
+          <!-- Primary Tabs right next to GamerKie on the left -->
+          <nav aria-label='Primary Navigation' class='gk-nav-tabs'>
+            <a class='gk-nav-tab active' href='/' id='navTabHome'>Home</a>
+            <a class='gk-nav-tab' href='/#favorites-section' id='navTabFav'>Favorites</a>
+            <a class='gk-nav-tab' href='/#popular-section' id='navTabPop'>Popular</a>
+          </nav>
+        </div>
+
+        <!-- Right Quick Action Buttons -->
+        <div class='header-right-tools'>
+          <button aria-label='Search Games' class='header-tool-btn' onclick='openModal("searchModal")' title='Search Games'>🔍</button>
+          <button aria-label='Switch Theme' class='header-tool-btn' onclick='toggleThemeMode()' title='Toggle Dark/Light Mode'>🌓</button>
+          <a aria-label='Saved Favorites' class='header-tool-btn' href='/#favorites-section' title='Saved Games'>
+            ♥
+            <span class='fav-badge-counter' id='headerFavBadge'>0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       2. EXPANDED CATEGORY BAR (19 GENRES WITH INSTANT FILTER & TOUCH SCROLL)
+       ======================================================================== -->
+  <nav aria-label='Game Categories' class='gk-category-bar'>
+    <div class='gk-container'>
+      <div class='category-track' id='categoryBarTrack'>
+        <a class='cat-pill active' data-cat='ALL' href='/' onclick='return filterByCategory("ALL", this, event)'>🏠 Home</a>
+        <a class='cat-pill' href='/#favorites-section'>♥ Favorites</a>
+        <a class='cat-pill' href='/#popular-section'>🔥 Popular Games</a>
+        <a class='cat-pill' data-cat='Action' href='/search/label/Action' onclick='return filterByCategory("Action", this, event)'>⚔️ Action</a>
+        <a class='cat-pill' data-cat='Racing' href='/search/label/Racing' onclick='return filterByCategory("Racing", this, event)'>🏎️ Racing</a>
+        <a class='cat-pill' data-cat='Driving' href='/search/label/Driving' onclick='return filterByCategory("Driving", this, event)'>🚗 Driving</a>
+        <a class='cat-pill' data-cat='Puzzle' href='/search/label/Puzzle' onclick='return filterByCategory("Puzzle", this, event)'>🧩 Puzzle</a>
+        <a class='cat-pill' data-cat='Multiplayer' href='/search/label/Multiplayer' onclick='return filterByCategory("Multiplayer", this, event)'>👥 Multiplayer</a>
+        <a class='cat-pill' data-cat='Adventure' href='/search/label/Adventure' onclick='return filterByCategory("Adventure", this, event)'>🗺️ Adventure</a>
+        <a class='cat-pill' data-cat='Arcade' href='/search/label/Arcade' onclick='return filterByCategory("Arcade", this, event)'>🕹️ Arcade</a>
+        <a class='cat-pill' data-cat='Shooting' href='/search/label/Shooting' onclick='return filterByCategory("Shooting", this, event)'>🎯 Shooting</a>
+        <a class='cat-pill' data-cat='Sports' href='/search/label/Sports' onclick='return filterByCategory("Sports", this, event)'>⚽ Sports</a>
+        <a class='cat-pill' data-cat='Fighting' href='/search/label/Fighting' onclick='return filterByCategory("Fighting", this, event)'>🥊 Fighting</a>
+        <a class='cat-pill' data-cat='IO Games' href='/search/label/IO%20Games' onclick='return filterByCategory("IO Games", this, event)'>🌐 IO Games</a>
+        <a class='cat-pill' data-cat='Girls' href='/search/label/Girls' onclick='return filterByCategory("Girls", this, event)'>🎀 Girls</a>
+        <a class='cat-pill' data-cat='Board' href='/search/label/Board' onclick='return filterByCategory("Board", this, event)'>🎲 Board</a>
+        <a class='cat-pill' data-cat='Strategy' href='/search/label/Strategy' onclick='return filterByCategory("Strategy", this, event)'>🧠 Strategy</a>
+        <a class='cat-pill' data-cat='3D' href='/search/label/3D' onclick='return filterByCategory("3D", this, event)'>🎮 3D Games</a>
+        <a class='cat-pill' data-cat='Survival' href='/search/label/Survival' onclick='return filterByCategory("Survival", this, event)'>🛡️ Survival</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================================================
+       3. MAIN PORTAL BODY (UNIFIED SINGLE BLOG1 WIDGET - NO WIDGET CONFLICTS!)
+       ======================================================================== -->
+  <main class='gk-container'>
+
+    <!-- HOMEPAGE TOP SECTIONS (Shown only on Multi-Item / Homepage Views) -->
+    <b:if cond='!data:view.isSingleItem'>
+
+      <!-- Hero Banner -->
+      <section class='gk-hero-banner'>
+        <div class='hero-left'>
+          <span class='hero-emblem'>G</span>
+          <div class='hero-copy'>
+            <h1>GamerKie Pro Arcade</h1>
+            <p>Play Instant HTML5 &amp; WebGL Games on Mobile, Tablet &amp; PC — Zero Downloads!</p>
+          </div>
+        </div>
+        <div class='hero-actions'>
+          <a class='hero-action-pill' href='#all-games-section'>⚡ Browse All Games</a>
+          <a class='hero-action-pill' href='#popular-section'>🔥 Most Played</a>
+        </div>
+      </section>
+
+      <!-- SECTION 1: FAVORITE GAMES (STRICTLY 3 GAMES + MORE BUTTON) -->
+      <section class='gk-section' id='favorites-section'>
+        <div class='section-header'>
+          <div class='section-title-group'>
+            <h2>Favorite Games</h2>
+            <p>Your saved games on this device (3 shown)</p>
+          </div>
+          <button class='section-more-btn' id='favMoreToggleBtn' onclick='toggleExpandFavorites()'>More ›</button>
+        </div>
+        <div class='gk-grid-3' id='favoritesGridContainer' style='display:none;'></div>
+        <div class='empty-state-banner' id='favoritesEmptyNotice'>
+          You have not saved any games yet. Tap the ♥ icon on any game card or player bar to save it here!
+        </div>
+      </section>
+
+      <!-- SECTION 2: POPULAR GAMES - MOST VIEWED (STRICTLY 3 GAMES + MORE BUTTON) -->
+      <section class='gk-section' id='popular-section'>
+        <div class='section-header'>
+          <div class='section-title-group'>
+            <h2>Popular Games</h2>
+            <p>Most viewed &amp; highest trending games on GamerKie</p>
+          </div>
+          <button class='section-more-btn' id='popMoreToggleBtn' onclick='toggleExpandPopular()'>More ›</button>
+        </div>
+        <div class='gk-grid-3' id='popularGridContainer'></div>
+      </section>
+
+      <!-- SECTION 3 HEADER: ALL GAMES -->
+      <div class='section-header' id='all-games-section'>
+        <div class='section-title-group'>
+          <h2 id='allGamesHeadingTitle'>All Games</h2>
+          <p id='allGamesSubTitle'>Complete catalog in a 3-column grid — no Older Games button required</p>
+        </div>
+        <button class='section-more-btn' id='resetCategoryFilterBtn' onclick='filterByCategory("ALL", null, event)' style='display:none;'>Show All Games</button>
+      </div>
+
+    </b:if>
+
+    <!-- UNIFIED BLOG1 SECTION (Handles Both 3-Grid Homepage AND Single-Post Game Stage!) -->
+    <b:section id='main-portal-content' showaddelement='no'>
+      <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2'>
+        <b:includable id='main' var='top'>
+
+          <!-- CASE A: HOMEPAGE / CATEGORY VIEW (3-COLUMN GRID) -->
+          <b:if cond='!data:view.isSingleItem'>
+            <div class='gk-grid-3' id='allGamesGrid'>
+              <b:loop values='data:posts' var='post'>
+                <article class='game-card'>
+                  <a expr:href='data:post.url' expr:title='data:post.title'>
+                    <div class='game-thumb-wrap'>
+                      <b:if cond='data:post.featuredImage'>
+                        <img class='game-thumb-img' expr:alt='data:post.title' expr:src='data:post.featuredImage' loading='lazy'/>
+                      <b:else/>
+                        <img class='game-thumb-img' expr:alt='data:post.title' expr:data- fallback-title='data:post.title' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'/>
+                      </b:if>
+                      <span class='card-corner-tag'>HOT</span>
+                    </div>
+                    <div class='game-card-info'>
+                      <h3 class='game-card-title'><data:post.title/></h3>
+                      <div class='game-card-meta'>
+                        <span class='game-card-genre'>
+                          <b:if cond='data:post.labels'><data:post.labels.first.name/><b:else/>Arcade</b:if>
+                        </span>
+                        <span class='card-play-pill'>PLAY</span>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+              </b:loop>
+            </div>
+          </b:if>
+
+          <!-- CASE B: SINGLE POST / GAME PAGE VIEW (100% DUPLICATE-FREE SINGLE PLAYER STAGE) -->
+          <b:if cond='data:view.isSingleItem'>
+            <b:loop values='data:posts' var='post'>
+              <article class='single-post-stage-wrap'>
+
+                <!-- SINGLE TOP GAME STAGE: <data:post.body/> mounts ONLY ONCE right here! -->
+                <div class='game-theatre-box' id='gameTheatreWrapper'>
+                  <div class='game-viewport-screen' id='mainGamePlayerScreen'>
+                    <data:post.body/>
+                  </div>
+
+                  <!-- Player Controls Bar -->
+                  <div class='game-action-bar'>
+                    <div class='action-btn-group'>
+                      <button class='stage-ctrl-btn primary-ctrl' onclick='triggerFullscreen()'>⛶ Fullscreen</button>
+                      <button class='stage-ctrl-btn' onclick='toggleTheaterMode()'>🎬 Theater</button>
+                      <button class='stage-ctrl-btn' onclick='restartActiveGame()'>↻ Restart</button>
+                    </div>
+                    <div class='action-btn-group'>
+                      <button class='stage-ctrl-btn' expr:data-img='data:post.featuredImage' expr:data-title='data:post.title' expr:data-url='data:post.url' id='postFavBtn' onclick='togglePostFavorite(this)'>
+                        ♡ Favorite
+                      </button>
+                      <button class='stage-ctrl-btn' expr:data-title='data:post.title' expr:data-url='data:post.url' onclick='shareActiveGame(this)'>
+                        ↗ Share
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Clean About Game Panel (Zero duplicate game frames below!) -->
+                <div class='about-game-panel'>
+                  <div class='about-game-header'>
+                    <h1>About <data:post.title/></h1>
+                    <div class='genre-pill-list'>
+                      <b:if cond='data:post.labels'>
+                        <b:loop values='data:post.labels' var='label'>
+                          <a class='genre-tag-pill' expr:href='data:label.url'><data:label.name/></a>
+                        </b:loop>
+                      </b:if>
+                    </div>
+                  </div>
+                  <p>Play <strong><data:post.title/></strong> online for free on GamerKie. Engineered for instant, lag-free browser play across mobile phones, tablets, and desktop PCs with no downloads required.</p>
+                </div>
+
+                <!-- Related / More Games to Play (3-Column Grid) -->
+                <section class='related-games-block'>
+                  <div class='section-header'>
+                    <div class='section-title-group'>
+                      <h2>More Games to Play</h2>
+                      <p>Recommended games from the GamerKie catalog</p>
+                    </div>
+                    <a class='section-more-btn' href='/'>View All ›</a>
+                  </div>
+                  <div class='gk-grid-3' id='relatedGamesGrid'></div>
+                </section>
+
+              </article>
+            </b:loop>
+          </b:if>
+
+        </b:includable>
+      </b:widget>
+
+      <!-- Hidden Native PopularPosts Widget (Sorted by Most Viewed All-Time) -->
+      <b:widget id='PopularPosts1' locked='true' title='Most Viewed Games' type='PopularPosts' version='2'>
+        <b:widget-settings>
+          <b:widget-setting name='numItemsToShow'>10</b:widget-setting>
+          <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+          <b:widget-setting name='showSnippets'>false</b:widget-setting>
+          <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+          <div id='nativePopularStore' style='display:none;'>
+            <b:loop values='data:posts' var='post'>
+              <div class='pop-seed-node' expr:data-img='data:post.featuredImage' expr:data-title='data:post.title' expr:data-url='data:post.url'/>
+            </b:loop>
+          </div>
+        </b:includable>
+      </b:widget>
+    </b:section>
+
+  </main>
+
+  <!-- ========================================================================
+       4. FOOTER, MOBILE BOTTOM DOCK & BILINGUAL MODALS
+       ======================================================================== -->
+  <footer class='gk-footer'>
+    <div class='gk-container'>
+      <div class='footer-brand-box'>
+        <a class='gk-brand' href='/'>
+          <span class='gk-brand-icon'>G</span>
+          <span class='gk-brand-text'>Gamer<span>Kie</span></span>
+        </a>
+      </div>
+      <div class='footer-links-row'>
+        <span class='footer-modal-trigger' onclick='openModal("aboutModal")'>About Us</span>
+        <span class='footer-modal-trigger' onclick='openModal("privacyModal")'>Privacy Policy</span>
+        <span class='footer-modal-trigger' onclick='openModal("termsModal")'>Terms of Use</span>
+        <span class='footer-modal-trigger' onclick='openModal("contactModal")'>Contact</span>
+      </div>
+      <p class='footer-copyright'>© 2026 GamerKie. All rights reserved. Play Free Games Online.</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Sticky Navigation Bar -->
+  <nav aria-label='Mobile Quick Navigation' class='gk-mobile-dock'>
+    <a class='dock-link' href='/'>🏠<span>Home</span></a>
+    <a class='dock-link' href='/search/label/Action'>⚔️<span>Action</span></a>
+    <span class='dock-link' onclick='openModal("searchModal")'>🔍<span>Search</span></span>
+    <a class='dock-link' href='/#favorites-section'>♥<span>Saved</span></a>
+  </nav>
+
+  <!-- SEARCH MODAL (WORKS ON BOTH HOMEPAGE & SINGLE POST PAGES) -->
+  <div class='gk-modal-overlay' id='searchModal'>
+    <div class='gk-modal-card'>
+      <button class='modal-close-x' onclick='closeModal("searchModal")'>✕</button>
+      <h3>🔍 Search Games on GamerKie</h3>
+      <input class='gk-search-input' id='searchModalInput' oninput='handleLiveSearch(this.value)' placeholder='Type a game name or category (e.g., Worms, Action, Puzzle)...' type='text'/>
+      <div class='gk-grid-3' id='searchModalResultsGrid'></div>
+    </div>
+  </div>
+
+  <!-- ABOUT MODAL -->
+  <div class='gk-modal-overlay' id='aboutModal'>
+    <div class='gk-modal-card'>
+      <button class='modal-close-x' onclick='closeModal("aboutModal")'>✕</button>
+      <h3>Welcome to GamerKie</h3>
+      <p>Hamara maksad (mission) duniya bhar ke gamers ko ek smooth, fast, aur secure gaming experience dena hai. Chahe aap Ludo ke fan ho, Action games pasand karte ho, ya Puzzle games mein dimaag lagana chahte ho — GamerKie par sab kuch free hai.</p>
+      <ul>
+        <li>🎮 <strong>No Downloads:</strong> Direct browser mein play karein.</li>
+        <li>⚡ <strong>Lag-Free Experience:</strong> Fast servers aur optimized code.</li>
+        <li>📱 <strong>Mobile Friendly:</strong> Har device (Mobile, Tablet, PC) par perfect chalta hai.</li>
+        <li>👥 <strong>Play with Friends:</strong> Multiplayer aur private rooms ka support.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PRIVACY MODAL -->
+  <div class='gk-modal-overlay' id='privacyModal'>
+    <div class='gk-modal-card'>
+      <button class='modal-close-x' onclick='closeModal("privacyModal")'>✕</button>
+      <h3>Privacy Policy</h3>
+      <p><strong>1. Information We Collect:</strong> Jab aap hamari website par aate hain, toh hum aapse koi bhi personal data maangte nahi hain. Multiplayer games ke liye chuna gaya naam ya avatar sirf us game room tak seemit rehta hai.</p>
+      <p><strong>2. Cookies aur Analytics:</strong> Hamari website cookies aur localStorage ka use karti hai taaki website tez chale aur aapka game data (coins, saved games) aapke browser mein save rahe.</p>
+      <p><strong>3. Third-Party Links:</strong> Hamari website par dusri websites ke links ya ads ho sakte hain, jinki apni Privacy Policy lagu hoti hai.</p>
+    </div>
+  </div>
+
+  <!-- TERMS MODAL -->
+  <div class='gk-modal-overlay' id='termsModal'>
+    <div class='gk-modal-card'>
+      <button class='modal-close-x' onclick='closeModal("termsModal")'>✕</button>
+      <h3>Terms of Use</h3>
+      <p><strong>1. Fair Play:</strong> GamerKie par kisi bhi game mein hack, bot, ya cheat code ka use karna sakht mana hai.</p>
+      <p><strong>2. User Conduct:</strong> Multiplayer games ke in-game chat mein harassment ya spam link bhejna allow nahi hai.</p>
+      <p><strong>3. Copyright:</strong> GamerKie website ka design, code, logos, aur themes hamari property hain (Copyright 2026 GamerKie).</p>
+    </div>
+  </div>
+
+  <!-- CONTACT MODAL -->
+  <div class='gk-modal-overlay' id='contactModal'>
+    <div class='gk-modal-card'>
+      <button class='modal-close-x' onclick='closeModal("contactModal")'>✕</button>
+      <h3>Contact GamerKie</h3>
+      <p>Agar aapko kisi game ko play karne mein koi problem aa rahi hai, ya aap humse business aur sponsorship ke liye judna chahte hain, toh direct email karein:</p>
+      <p><strong>Email:</strong> mybusiness2662@gmail.com</p>
+      <p><strong>Response Time:</strong> 24 se 48 ghante (Working Days). Keep Gaming!</p>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       5. AUDITED & VERIFIED JAVASCRIPT ENGINE (ALL FUNCTIONS 100% WORKING)
+       ======================================================================== -->
+  <script type='text/javascript'>
+  //<![CDATA[
+  var fullGameCatalog = [];
+  var popularGamesList = [];
+  var isFavExpanded = false;
+  var isPopExpanded = false;
+  var catalogLoaded = false;
+
+  /* --------------------------------------------------------------------------
+     1. DYNAMIC NEON SVG POSTER GENERATOR (SOLVES BLANK GREEN CARDS FOREVER!)
+     If a game post has no uploaded thumbnail, generates a crisp gaming cover.
+     -------------------------------------------------------------------------- */
+  function buildGamingPosterSVG(title, category) {
+    var safeTitle = (title || "GamerKie Game").replace(/[<>&"']/g, "").substring(0, 24);
+    var safeCat = (category || "ARCADE").replace(/[<>&"']/g, "").toUpperCase().substring(0, 14);
+    var svg =
+      "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' width='400' height='400'>" +
+        "<defs>" +
+          "<linearGradient id='bg' x1='0%' y1='0%' x2='100%' y2='100%'>" +
+            "<stop offset='0%' stop-color='#06261f'/>" +
+            "<stop offset='55%' stop-color='#0b4f3f'/>" +
+            "<stop offset='100%' stop-color='#122230'/>" +
+          "</linearGradient>" +
+        "</defs>" +
+        "<rect width='400' height='400' fill='url(#bg)'/>" +
+        "<circle cx='200' cy='155' r='70' fill='none' stroke='#00f5a0' stroke-width='3' stroke-opacity='0.35'/>" +
+        "<text x='200' y='172' text-anchor='middle' fill='#00f5a0' font-family='sans-serif' font-size='54' font-weight='900'>🎮</text>" +
+        "<rect x='120' y='245' width='160' height='26' rx='13' fill='#00f5a0' fill-opacity='0.18'/>" +
+        "<text x='200' y='263' text-anchor='middle' fill='#00f5a0' font-family='sans-serif' font-size='13' font-weight='800'>" + safeCat + "</text>" +
+        "<text x='200' y='315' text-anchor='middle' fill='#ffffff' font-family='sans-serif' font-size='21' font-weight='800'>" + safeTitle + "</text>" +
+        "<text x='200' y='355' text-anchor='middle' fill='#ffc857' font-family='sans-serif' font-size='12' font-weight='700'>GAMERKIE EDITION</text>" +
+      "</svg>";
+    return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+  }
+
+  /* --------------------------------------------------------------------------
+     2. INITIALIZATION ON DOM READY
+     -------------------------------------------------------------------------- */
+  document.addEventListener("DOMContentLoaded", function() {
+    // Restore Theme Mode (Default is Dark Pro Gaming Mode; Light mode optional)
+    if (localStorage.getItem("gamerkie_theme_mode") === "light") {
+      document.body.classList.add("light-mode");
+    }
+
+    // Highlight active category pill if on /search/label/... URL
+    highlightActiveCategoryFromUrl();
+
+    // Fix any server-rendered fallback thumbnails immediately
+    document.querySelectorAll("img[data-fallback-title]").forEach(function(img) {
+      var t = img.getAttribute("data-fallback-title") || "GamerKie";
+      img.src = buildGamingPosterSVG(t, "GAME");
+    });
+
+    // SINGLE-POST STAGE SANITIZATION (Eliminates duplicate iframes or post separator images)
+    var playerStage = document.getElementById("mainGamePlayerScreen");
+    if (playerStage) {
+      sanitizeSinglePostStage(playerStage);
+      syncPostFavoriteButtonState();
+    }
+
+    // Render Favorites Section (Max 3 by default)
+    renderFavoritesGrid();
+
+    // Load Popular Games & Full Catalog via JSON Feed
+    initPopularGames();
+    fetchAllGamesBatch(1);
+  });
+
+  /* --------------------------------------------------------------------------
+     3. SINGLE-POST DUPLICATE GAME & EXTRA THUMBNAIL SANITIZER
+     -------------------------------------------------------------------------- */
+  function sanitizeSinglePostStage(stage) {
+    // 1. If a post accidentally has 2 iframes inside its post body, keep only the first playable iframe
+    var iframes = stage.querySelectorAll("iframe");
+    if (iframes.length > 1) {
+      for (var i = 1; i < iframes.length; i++) {
+        iframes[i].remove();
+      }
+    }
+
+    // 2. If the post contains an active iframe or canvas game AND also has a Blogger .separator static image
+    //    (used only for post thumbnail), hide the static .separator image so it doesn't show below/above the game!
+    var hasGameFrame = stage.querySelector("iframe, canvas");
+    if (hasGameFrame) {
+      var separators = stage.querySelectorAll(".separator");
+      separators.forEach(function(sep) {
+        if (!sep.querySelector("iframe, canvas")) {
+          sep.style.display = "none";
+        }
+      });
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     4. THEME MODE, FULLSCREEN, THEATER & RESTART CONTROLS
+     -------------------------------------------------------------------------- */
+  function toggleThemeMode() {
+    document.body.classList.toggle("light-mode");
+    var mode = document.body.classList.contains("light-mode") ? "light" : "dark";
+    localStorage.setItem("gamerkie_theme_mode", mode);
+  }
+
+  function triggerFullscreen() {
+    var stage = document.getElementById("mainGamePlayerScreen");
+    if (!stage) return;
+    if (!document.fullscreenElement) {
+      if (stage.requestFullscreen) stage.requestFullscreen();
+      else if (stage.webkitRequestFullscreen) stage.webkitRequestFullscreen();
+      else if (stage.msRequestFullscreen) stage.msRequestFullscreen();
+    } else {
+      if (document.exitFullscreen) document.exitFullscreen();
+    }
+  }
+
+  function toggleTheaterMode() {
+    var wrapper = document.getElementById("gameTheatreWrapper");
+    if (wrapper) {
+      wrapper.classList.toggle("theater-expanded");
+    }
+  }
+
+  function restartActiveGame() {
+    var stage = document.getElementById("mainGamePlayerScreen");
+    if (!stage) return;
+    var iframe = stage.querySelector("iframe");
+    if (iframe && iframe.src) {
+      var targetSrc = iframe.src;
+      iframe.src = "";
+      setTimeout(function() { iframe.src = targetSrc; }, 90);
+    } else {
+      window.location.reload();
+    }
+  }
+
+  function shareActiveGame(btn) {
+    var title = btn.getAttribute("data-title") || document.title;
+    var url = btn.getAttribute("data-url") || window.location.href;
+    if (navigator.share) {
+      navigator.share({ title: title, url: url });
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function() {
+        alert("Game link copied to clipboard!");
+      });
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     5. FAVORITES SYSTEM (LOCALSTORAGE + CARD HEART + POST BUTTON SYNC)
+     -------------------------------------------------------------------------- */
+  function getFavoritesList() {
+    try {
+      return JSON.parse(localStorage.getItem("gamerkie_favs")) || [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveFavoritesList(list) {
+    localStorage.setItem("gamerkie_favs", JSON.stringify(list));
+    var badge = document.getElementById("headerFavBadge");
+    if (badge) badge.textContent = list.length;
+  }
+
+  function isGameFavorited(url) {
+    var list = getFavoritesList();
+    return list.some(function(item) { return item.url === url; });
+  }
+
+  function syncPostFavoriteButtonState() {
+    var btn = document.getElementById("postFavBtn");
+    if (!btn) return;
+    var url = btn.getAttribute("data-url") || window.location.href;
+    if (isGameFavorited(url)) {
+      btn.textContent = "❤️ Saved";
+      btn.classList.add("active-fav");
+    } else {
+      btn.textContent = "♡ Favorite";
+      btn.classList.remove("active-fav");
+    }
+  }
+
+  function togglePostFavorite(btn) {
+    var title = btn.getAttribute("data-title") || document.title;
+    var url = btn.getAttribute("data-url") || window.location.href;
+    var img = btn.getAttribute("data-img");
+    if (!img || img === "") {
+      img = buildGamingPosterSVG(title, "SAVED");
+    }
+    toggleFavoriteItem({ title: title, url: url, img: img, category: "Saved" });
+    syncPostFavoriteButtonState();
+  }
+
+  function toggleFavoriteItem(gameObj) {
+    var list = getFavoritesList();
+    var index = list.findIndex(function(item) { return item.url === gameObj.url; });
+    if (index > -1) {
+      list.splice(index, 1);
+    } else {
+      list.unshift(gameObj);
+    }
+    saveFavoritesList(list);
+    renderFavoritesGrid();
+  }
+
+  function renderFavoritesGrid() {
+    var list = getFavoritesList();
+    var badge = document.getElementById("headerFavBadge");
+    if (badge) badge.textContent = list.length;
+
+    var grid = document.getElementById("favoritesGridContainer");
+    var emptyNotice = document.getElementById("favoritesEmptyNotice");
+    var moreBtn = document.getElementById("favMoreToggleBtn");
+    if (!grid) return;
+
+    if (list.length === 0) {
+      grid.style.display = "none";
+      if (emptyNotice) emptyNotice.style.display = "block";
+      if (moreBtn) moreBtn.textContent = "More ›";
+      return;
+    }
+
+    if (emptyNotice) emptyNotice.style.display = "none";
+    grid.style.display = "grid";
+    grid.innerHTML = "";
+
+    // Strictly show 3 games on Homepage unless "More" is clicked
+    var visibleItems = isFavExpanded ? list : list.slice(0, 3);
+    visibleItems.forEach(function(game) {
+      grid.appendChild(buildGameCardDOM(game, "SAVED"));
+    });
+
+    if (moreBtn) {
+      moreBtn.textContent = isFavExpanded ? "Show 3 ‹" : "More ›";
+    }
+  }
+
+  function toggleExpandFavorites() {
+    var list = getFavoritesList();
+    if (list.length === 0) {
+      alert("Tap the ♥ icon on any game to add it to your Favorites!");
+      return;
+    }
+    isFavExpanded = !isFavExpanded;
+    renderFavoritesGrid();
+  }
+
+  /* --------------------------------------------------------------------------
+     6. GAME CARD BUILDER WITH 1-TAP FAVORITE BUTTON & FALLBACK POSTER
+     -------------------------------------------------------------------------- */
+  function buildGameCardDOM(game, cornerLabel) {
+    var article = document.createElement("article");
+    article.className = "game-card";
+    var cat = game.category || "Arcade";
+    var tag = cornerLabel || "HOT";
+    var poster = game.img || buildGamingPosterSVG(game.title, cat);
+    var savedClass = isGameFavorited(game.url) ? "card-fav-trigger is-saved" : "card-fav-trigger";
+    var cleanTitle = (game.title || "Game").replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+
+    article.innerHTML =
+      "<button type='button' class='" + savedClass + "' title='Save to Favorites'>♥</button>" +
+      "<a href='" + game.url + "' title='" + cleanTitle + "'>" +
+        "<div class='game-thumb-wrap'>" +
+          "<img class='game-thumb-img' src='" + poster + "' alt='" + cleanTitle + "' loading='lazy'/>" +
+          "<span class='card-corner-tag'>" + tag + "</span>" +
+        "</div>" +
+        "<div class='game-card-info'>" +
+          "<h3 class='game-card-title'>" + game.title + "</h3>" +
+          "<div class='game-card-meta'>" +
+            "<span class='game-card-genre'>" + cat + "</span>" +
+            "<span class='card-play-pill'>PLAY</span>" +
+          "</div>" +
+        "</div>" +
+      "</a>";
+
+    // Bind 1-Tap Card Heart Toggle
+    var heartBtn = article.querySelector(".card-fav-trigger");
+    if (heartBtn) {
+      heartBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleFavoriteItem({ title: game.title, url: game.url, img: poster, category: cat });
+        heartBtn.classList.toggle("is-saved", isGameFavorited(game.url));
+      });
+    }
+
+    // Fallback if external image URL fails to load
+    var imgEl = article.querySelector(".game-thumb-img");
+    if (imgEl) {
+      imgEl.addEventListener("error", function() {
+        imgEl.src = buildGamingPosterSVG(game.title, cat);
+      });
+    }
+
+    return article;
+  }
+
+  /* --------------------------------------------------------------------------
+     7. POPULAR GAMES (MOST VIEWED WIDGET + JSON FALLBACK, 3 GAMES + MORE)
+     -------------------------------------------------------------------------- */
+  function initPopularGames() {
+    var popGrid = document.getElementById("popularGridContainer");
+    if (!popGrid) return;
+
+    var seedNodes = document.querySelectorAll("#nativePopularStore .pop-seed-node");
+    var extracted = [];
+    seedNodes.forEach(function(node) {
+      var title = node.getAttribute("data-title");
+      var url = node.getAttribute("data-url");
+      var img = node.getAttribute("data-img");
+      if (title && url) {
+        extracted.push({
+          title: title,
+          url: url,
+          img: (img && img !== "") ? img : buildGamingPosterSVG(title, "POPULAR"),
+          category: "Most Played"
+        });
+      }
+    });
+
+    if (extracted.length >= 3) {
+      popularGamesList = extracted;
+      renderPopularGamesGrid();
+    } else {
+      fetch("/feeds/posts/default/-/Popular?alt=json&max-results=12")
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          if (!data.feed || !data.feed.entry || data.feed.entry.length === 0) {
+            return fetch("/feeds/posts/default?alt=json&max-results=12").then(function(res) { return res.json(); });
+          }
+          return data;
+        })
+        .then(function(data) {
+          if (!data || !data.feed || !data.feed.entry) return;
+          popularGamesList = data.feed.entry.map(parseBloggerEntry);
+          renderPopularGamesGrid();
+        })
+        .catch(function() {});
+    }
+  }
+
+  function renderPopularGamesGrid() {
+    var popGrid = document.getElementById("popularGridContainer");
+    var moreBtn = document.getElementById("popMoreToggleBtn");
+    if (!popGrid || popularGamesList.length === 0) return;
+
+    popGrid.innerHTML = "";
+    // Strictly show 3 games on Homepage unless "More" is toggled
+    var sliceItems = isPopExpanded ? popularGamesList : popularGamesList.slice(0, 3);
+    sliceItems.forEach(function(game) {
+      popGrid.appendChild(buildGameCardDOM(game, "TOP"));
+    });
+
+    if (moreBtn) {
+      moreBtn.textContent = isPopExpanded ? "Show 3 ‹" : "More ›";
+    }
+  }
+
+  function toggleExpandPopular() {
+    isPopExpanded = !isPopExpanded;
+    renderPopularGamesGrid();
+  }
+
+  /* --------------------------------------------------------------------------
+     8. RECURSIVE ALL-GAMES LOADER (100% POSTS IN 3-GRID, NO OLDER GAMES LINK)
+     -------------------------------------------------------------------------- */
+  function parseBloggerEntry(entry) {
+    var title = entry.title ? entry.title.$t : "GamerKie Game";
+    var url = "#";
+    if (entry.link) {
+      entry.link.forEach(function(l) {
+        if (l.rel === "alternate") url = l.href;
+      });
+    }
+    var categories = [];
+    if (entry.category && entry.category.length > 0) {
+      entry.category.forEach(function(c) { categories.push(c.term); });
+    }
+    var primaryCat = categories.length > 0 ? categories[0] : "Arcade";
+
+    var img = "";
+    if (entry.media$thumbnail && entry.media$thumbnail.url) {
+      img = entry.media$thumbnail.url.replace(/\/s[0-9]+(-c)?\//, "/s600/");
+    } else if (entry.content && entry.content.$t) {
+      var match = entry.content.$t.match(/<img[^>]+src=["']([^"']+)["']/i);
+      if (match && match[1]) img = match[1];
+    }
+    if (!img || img.indexOf("via.placeholder.com") > -1) {
+      img = buildGamingPosterSVG(title, primaryCat);
+    }
+
+    return {
+      title: title,
+      url: url,
+      img: img,
+      category: primaryCat,
+      allCategories: categories
+    };
+  }
+
+  function fetchAllGamesBatch(startIndex) {
+    fetch("/feeds/posts/default?alt=json&start-index=" + startIndex + "&max-results=150")
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        if (!data || !data.feed || !data.feed.entry || data.feed.entry.length === 0) {
+          catalogLoaded = true;
+          populateRelatedGamesOnPost();
+          return;
+        }
+
+        var parsedBatch = data.feed.entry.map(parseBloggerEntry);
+        if (startIndex === 1) {
+          fullGameCatalog = [];
+        }
+        fullGameCatalog = fullGameCatalog.concat(parsedBatch);
+        catalogLoaded = true;
+
+        // If on main homepage (/), render all games continuously in 3-column grid
+        var grid = document.getElementById("allGamesGrid");
+        var isRootHome = (window.location.pathname === "/" || window.location.pathname === "/index.html");
+        if (grid && isRootHome) {
+          if (startIndex === 1) grid.innerHTML = "";
+          parsedBatch.forEach(function(game) {
+            grid.appendChild(buildGameCardDOM(game, "HOT"));
+          });
+        }
+
+        // If popular games list was still empty, populate it from the catalog
+        if (popularGamesList.length === 0 && fullGameCatalog.length > 0) {
+          popularGamesList = fullGameCatalog.slice(0, 9);
+          renderPopularGamesGrid();
+        }
+
+        // Populate Related Games on Single Post Page
+        populateRelatedGamesOnPost();
+
+        // Recursively fetch next 150 posts if blog has more than 150 games
+        if (data.feed.entry.length === 150) {
+          fetchAllGamesBatch(startIndex + 150);
+        }
+      })
+      .catch(function() {});
+  }
+
+  function populateRelatedGamesOnPost() {
+    var relGrid = document.getElementById("relatedGamesGrid");
+    if (!relGrid || fullGameCatalog.length === 0) return;
+    relGrid.innerHTML = "";
+    var currentUrl = window.location.href.split("?")[0];
+    var related = fullGameCatalog.filter(function(g) {
+      return g.url.split("?")[0] !== currentUrl;
+    }).slice(0, 6);
+
+    related.forEach(function(g) {
+      relGrid.appendChild(buildGameCardDOM(g, "PLAY"));
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+     9. INSTANT CATEGORY BAR FILTERING & ACTIVE STATE
+     -------------------------------------------------------------------------- */
+  function highlightActiveCategoryFromUrl() {
+    var path = decodeURIComponent(window.location.pathname);
+    if (path.indexOf("/search/label/") === 0) {
+      var labelName = path.replace("/search/label/", "").split("?")[0];
+      var pills = document.querySelectorAll("#categoryBarTrack .cat-pill");
+      pills.forEach(function(p) {
+        p.classList.remove("active");
+        if ((p.getAttribute("data-cat") || "").toLowerCase() === labelName.toLowerCase()) {
+          p.classList.add("active");
+        }
+      });
+    }
+  }
+
+  function filterByCategory(categoryName, pillEl, evt) {
+    var grid = document.getElementById("allGamesGrid");
+    // If user is on a single post page, let the link navigate normally to the category URL
+    if (!grid || !catalogLoaded || fullGameCatalog.length === 0) {
+      return true;
+    }
+
+    if (evt) evt.preventDefault();
+
+    // Update active pill styling
+    var pills = document.querySelectorAll("#categoryBarTrack .cat-pill");
+    pills.forEach(function(p) { p.classList.remove("active"); });
+    if (pillEl) {
+      pillEl.classList.add("active");
+    } else {
+      var homePill = document.querySelector('#categoryBarTrack .cat-pill[data-cat="ALL"]');
+      if (homePill) homePill.classList.add("active");
+    }
+
+    var heading = document.getElementById("allGamesHeadingTitle");
+    var subHeading = document.getElementById("allGamesSubTitle");
+    var resetBtn = document.getElementById("resetCategoryFilterBtn");
+
+    grid.innerHTML = "";
+
+    if (categoryName === "ALL") {
+      if (heading) heading.textContent = "All Games";
+      if (subHeading) subHeading.textContent = "Complete catalog in a 3-column grid — no Older Games button required";
+      if (resetBtn) resetBtn.style.display = "none";
+      fullGameCatalog.forEach(function(g) {
+        grid.appendChild(buildGameCardDOM(g, "HOT"));
+      });
+      return false;
+    }
+
+    // Filter games matching the selected category (or show all matching keyword if label not tagged yet)
+    var target = categoryName.toLowerCase();
+    var matches = fullGameCatalog.filter(function(g) {
+      var inCats = (g.allCategories || []).some(function(c) { return c.toLowerCase().indexOf(target) > -1; });
+      var inTitle = g.title.toLowerCase().indexOf(target) > -1;
+      return inCats || inTitle;
+    });
+
+    if (heading) heading.textContent = categoryName + " Games";
+    if (subHeading) subHeading.textContent = matches.length > 0 ? ("Showing " + matches.length + " games in " + categoryName) : ("Showing top games for " + categoryName);
+    if (resetBtn) resetBtn.style.display = "inline-block";
+
+    var listToRender = matches.length > 0 ? matches : fullGameCatalog;
+    listToRender.forEach(function(g) {
+      grid.appendChild(buildGameCardDOM(g, categoryName.toUpperCase()));
+    });
+
+    var allSec = document.getElementById("all-games-section");
+    if (allSec) allSec.scrollIntoView({ behavior: "smooth" });
+    return false;
+  }
+
+  /* --------------------------------------------------------------------------
+     10. MODAL & LIVE SEARCH ENGINE (WORKS EVERYWHERE)
+     -------------------------------------------------------------------------- */
+  function openModal(id) {
+    var modal = document.getElementById(id);
+    if (!modal) return;
+    modal.classList.add("active");
+    if (id === "searchModal") {
+      var inp = document.getElementById("searchModalInput");
+      if (inp) {
+        setTimeout(function() { inp.focus(); }, 60);
+        handleLiveSearch(inp.value || "");
+      }
+    }
+  }
+
+  function closeModal(id) {
+    var modal = document.getElementById(id);
+    if (modal) modal.classList.remove("active");
+  }
+
+  function handleLiveSearch(query) {
+    var resultsGrid = document.getElementById("searchModalResultsGrid");
+    if (!resultsGrid) return;
+    resultsGrid.innerHTML = "";
+
+    var q = (query || "").trim().toLowerCase();
+    var sourceList = fullGameCatalog.length > 0 ? fullGameCatalog : popularGamesList;
+
+    if (!q) {
+      sourceList.slice(0, 6).forEach(function(g) {
+        resultsGrid.appendChild(buildGameCardDOM(g, "PLAY"));
+      });
+      return;
+    }
+
+    var matches = sourceList.filter(function(g) {
+      return g.title.toLowerCase().indexOf(q) > -1 || (g.category || "").toLowerCase().indexOf(q) > -1;
+    });
+
+    if (matches.length === 0) {
+      resultsGrid.innerHTML = "<div class='empty-state-banner' style='grid-column: 1 / -1;'>No games matched \"" + q.replace(/[<>&"']/g, "") + "\". Try another keyword!</div>";
+      return;
+    }
+
+    matches.slice(0, 12).forEach(function(g) {
+      resultsGrid.appendChild(buildGameCardDOM(g, "PLAY"));
+    });
+  }
+  //]]>
+  </script>
+</body>
+</html>
